@@ -4,10 +4,11 @@ LABEL maintainer_url="https://github.com/buddhavs"
 LABEL version="1.0.0"
 LABEL GITHUB="https://github.com/mattgodbolt/compiler-explorer"
 
-RUN zypper in -y shadow git-core tar curl \
+RUN zypper mr -Ka; \
+zypper in -y shadow git-core tar curl \
 make which \
 gcc gcc-c++ clang6; \
-zypper clean --all
+zypper clean -a
 
 # setup environment
 ARG UN=godbolt
