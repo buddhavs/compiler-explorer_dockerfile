@@ -6,7 +6,8 @@ LABEL GITHUB="https://github.com/mattgodbolt/compiler-explorer"
 
 RUN zypper in -y shadow git-core tar curl \
 make which \
-gcc gcc-c++ clang6
+gcc gcc-c++ clang6; \
+zypper clean --all
 
 # setup environment
 ARG UN=godbolt
